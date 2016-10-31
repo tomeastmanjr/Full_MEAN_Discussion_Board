@@ -1,0 +1,38 @@
+<h3>Welcome, {{currentUser.userName}}!</h3>
+Successfully logged in!
+<a href="/logout">Logout</a>
+<p></p>
+<table>
+  <tr>
+    <th>Category</th>
+    <th>Topic</th>
+    <th>User Name</th>
+    <th>Posts</th>
+  </tr>
+  <tr>
+    <td>test.category}}</td>
+    <td>test.topic}}</td>
+    <td>test.userName}}</td>
+    <td>test.numberOfPosts}}</td>
+  </tr>
+  <tr ng-repeat='topic in topics track by $index'>
+    <td>{{topic.category}}</td>
+    <td>{{topic.topic}}</td>
+    <td>{{topic.userName}}</td>
+    <td>{{topic.numberOfPosts}}</td>
+  </tr>
+</table>
+
+<form>
+  <h3>Add a new Topic</h3>
+  <p><label for="topic">Topic</label>
+  <input type="text" name='topic' ng-model='topic.topic'></p>
+  <p><label for="description">Description</label>
+  <input type="textfield" name='description' ng-model='topic.description'></p>
+  <p><label for="category">Category</label>
+  <select class="" name="category" ng-model='topic.category'>
+    <option value="test">Test</option>
+    <option value="{{category}}" ng-repeat='category in categories'>{{category}}</option>
+  </select></p>
+  <input type="submit" value='Submit' ng-click='addTopic(topic)'>
+</form>
